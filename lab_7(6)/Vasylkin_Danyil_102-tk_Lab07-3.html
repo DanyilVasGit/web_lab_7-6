@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <title>Василькін Даниїл 102-ТК лаб07-1</title>
+  <meta charset="UTF-8">
+  <style>
+    body {
+    background-color: #292929;
+    color: #f7f7f7;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    text-align: center;
+    }
+  </style>
+</head>
+<body>
+    <h1>Форма замовлення товару</h1>
+
+    <form action="order.php" method="post">
+        <label for="bankAccountNumber">Номер банківського рахунку:</label>
+        <input type="text" name="bankAccountNumber" required><br>
+
+        <label for="personalNumber">Особистий номер користувача:</label>
+        <input type="text"name="personalNumber" required><br>
+
+        <h2>Вибір товару</h2>
+        <select name="products[]">
+            <option value="product1">Товар 1</option>
+            <option value="product2">Товар 2</option>
+            <option value="product3">Товар 3</option>
+        </select>
+        <br><br>
+
+        <label for="comments">Коментарі:</label><br>
+        <textarea id="comments" name="comments"></textarea><br>
+
+        <h2>Спосіб оплати</h2>
+        <label for="cashPayment">Готівковий розрахунок:</label>
+        <input type="radio" name="paymentType" value="cash" checked>
+        <label for="cashlessPayment">Безготівковий розрахунок:</label>
+        <input type="radio" name="paymentType" value="cashless"><br>
+
+        <h2>Додаткова інформація</h2>
+        <label for="balanceInfo">Дані про залишки на рахунку:</label>
+        <input type="checkbox" name="additionalInfo[]" value="balance">
+        <label for="transactionsList">Список останніх виплат по рахунку:</label>
+        <input type="checkbox" name="additionalInfo[]" value="transactions"><br>
+
+        <button type="submit">Відправити замовлення</button>
+    </form>
+</body>
+</html>
